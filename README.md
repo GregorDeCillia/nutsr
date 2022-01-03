@@ -104,27 +104,9 @@ nuts_map(y)
 
 ![](man/figures/nuts3_plot-1.png)<!-- -->
 
-``` r
-library(dplyr)
-iso5_pop() %>% 
-  filter(substr(iso, 1, 1) == 9) %>% 
-  nuts_map(overlay_nuts2 = FALSE)
-```
-
-![](man/figures/nuts3_plot-2.png)<!-- -->
-
-In the future, it should also be possible to create sunburst graphs via
-[`{highcharter}`](https://jkunst.com/highcharter/). See
-<https://www.highcharts.com/demo/sunburst> for an example.
-
-``` r
-# visualize iso3 population with a sunburst diagram
-source('dev/sunburst.R')$value
-```
-
-<p align="center">
-<img src="man/figures/sunburst.png" width="616px" />
-</p>
+See the [data visualization
+article](https://gregordecillia.github.io/nutsr/articles/dataviz.html)
+for more examples.
 
 ## Similar projects
 

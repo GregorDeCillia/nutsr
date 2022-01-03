@@ -98,23 +98,9 @@ library(dplyr)
 library(sf)
 y <- iso3_pop()
 nuts_map(y)
-library(dplyr)
-iso5_pop() %>% 
-  filter(substr(iso, 1, 1) == 9) %>% 
-  nuts_map(overlay_nuts2 = FALSE)
 ```
 
-In the future, it should also be possible to create sunburst graphs via [`{highcharter}`].
-See https://www.highcharts.com/demo/sunburst for an example.
-
-```{r, eval=FALSE}
-# visualize iso3 population with a sunburst diagram
-source('dev/sunburst.R')$value
-```
-
-<p align="center">
-  <img src="man/figures/sunburst.png" width="616px" />
-</p>
+See the [data visualization article] for more examples.
 
 ## Similar projects
 
@@ -131,3 +117,4 @@ regions for all EU27 countries, including austria.
 [`{STATcubeR}`]: https://statistikat.github.io/STATcubeR/
 [`{eurostat}`]: https://ropengov.github.io/eurostat/
 [`{highcharter}`]: https://jkunst.com/highcharter/
+[data visualization article]: https://gregordecillia.github.io/nutsr/articles/dataviz.html
