@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/articles/dataviz.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/articles/dataviz.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/articles/index.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/index.html</loc>
   </url>
   <url>
-    <loc>/reference/conversion_rules.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/conversion_rules.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/nuts_map.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/nuts_map.html</loc>
   </url>
   <url>
-    <loc>/reference/nutsr_cache_dir.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/nutsr_cache_dir.html</loc>
   </url>
   <url>
-    <loc>/reference/nutsr_data.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/nutsr_data.html</loc>
   </url>
   <url>
-    <loc>/reference/nutsr_shapes.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/nutsr_shapes.html</loc>
   </url>
   <url>
-    <loc>/reference/region_codes.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/region_codes.html</loc>
   </url>
   <url>
-    <loc>/reference/region_labels.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/region_labels.html</loc>
   </url>
   <url>
-    <loc>/reference/region_levels.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/region_levels.html</loc>
   </url>
   <url>
-    <loc>/reference/region_parents.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/region_parents.html</loc>
   </url>
   <url>
-    <loc>/reference/sc_roxygen.html</loc>
+    <loc>https://gregordecillia.github.io/nutsr/reference/sc_roxygen.html</loc>
   </url>
 </urlset>
