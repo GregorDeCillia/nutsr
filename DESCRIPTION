@@ -1,0 +1,25 @@
+Package: nutsr
+Type: Package
+Title: An R package for Austrian Nuts Regions, Munacipies and Districts
+Version: 0.1.0
+Author: Gregor de Cillia
+Maintainer: Gregor de Cillia <de.cillia.gregor@gmail.com>
+Description: Aimed to simplify your work with spatial variables in data
+    analysis projects.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Depends: 
+    R (>= 2.10)
+Roxygen: list(markdown = TRUE)
+Imports: 
+    dplyr,
+    STATcubeR
+Suggests: 
+    sf,
+    leaflet,
+    roxygen2,
+    htmltools
+Remotes:  
+    statistikat/STATcubeR

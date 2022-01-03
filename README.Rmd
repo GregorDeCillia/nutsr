@@ -1,0 +1,115 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/",
+  fig.width = 12
+)
+```
+
+# nutsr
+
+An R package for austrian nuts regions, munacipies and districts.
+Aimed to simplify your work with spatial variables in data analysis projects.
+
+## Installation and setup
+
+The package can be installed directly from github
+
+```r
+remotes::install_github('GregorDeCillia/nutsr')
+```
+
+Optional: Set up a cache with conversion rules and region polygons
+This cache are used throughout the package.
+Requires an active internet connection.
+See below for data sources and usecases.
+If this step is skipped, the cache will be populated on demand.
+
+```{r}
+library(nutsr)
+nutsr_cache_dir('~/.cache/nutsr')
+cache_conversion_rules()
+cache_region_shapes()
+```
+
+## Conversion rules for regions
+
+`nutsr` gives access to conversion rules for all nuts1, nuts2 and nuts3 regions
+as well as munacipies (`iso3`) and districts (`iso5`).
+This data has been collected via the [`{STATcubeR}`] package.
+Conversion rules are data frames with three columns: code, parent and name.
+They provide a custom `summary()` method.
+
+```{r}
+head(nuts2(), 4)
+
+summary(nuts1())
+
+summary(nuts2())
+
+summary(nuts3())
+
+summary(iso1())
+
+summary(iso3())
+
+summary(iso5())
+```
+
+## Utility functions for data analysis
+
+`nutsr` provides several utility functions to make data analysis easier.
+All these utility functions make use of the tables above.
+
+#### Convert codes to labels or vice versa
+
+```{r}
+region_labels(c('AT1', 'AT11', 'AT111', '10101'))
+
+region_codes(c("Ostösterreich", "Burgenland", "Mittelburgenland", "Eisenstadt"))
+region_codes("Burgenland", prefer = "iso")
+```
+
+#### Get information about hierarchies
+
+```{r}
+region_parents(c('AT1', 'AT11', 'AT111', '10101'))
+
+region_levels(c('AT1', 'AT11', 'AT111', '1', '101', '10101'))
+```
+
+## Data visualization
+
+Visualize regional data with `nuts_map()`.
+This will create a [`{leaflet}`] map for the regions.
+
+```{r, include = FALSE}
+library(sf)
+```
+
+
+```{r nuts3_plot}
+library(sf)
+y <- iso3_pop()
+nuts_map(y)
+```
+
+## Similar projects
+
+The [`{eurostat}`] package contains information about nuts1, nuts2 and nuts3
+regions for all EU27 countries, including austria.
+
+```r
+?eurostat::add_nuts_level
+?eurostat::recode_to_nuts_2016
+?eurostat::get_eurostat_geospatial
+```
+
+[`{leaflet}`]: https://rstudio.github.io/leaflet/
+[`{STATcubeR}`]: https://statistikat.github.io/STATcubeR/
+[`{eurostat}`]: https://ropengov.github.io/eurostat/
