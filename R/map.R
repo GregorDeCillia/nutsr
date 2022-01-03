@@ -26,7 +26,7 @@
 #'   mutate(deaths_rel = deaths/pop) %>%
 #'   nuts_map(color = "deaths_rel")
 #' @export
-nuts_map <- function(x, join_by = NULL, color = NULL, cutoff = 0.9) {
+nuts_map <- function(x, join_by = NULL, color = NULL, cutoff = 0.9, overlay_nuts2 = TRUE) {
   stopifnot(is.data.frame(x))
   if (is.null(join_by))
     join_by <- names(x)[1]
@@ -46,9 +46,12 @@ nuts_map <- function(x, join_by = NULL, color = NULL, cutoff = 0.9) {
     domain = x$nutsr_value
   )
 
-  leaflet::leaflet() %>%
-    leaflet::addPolygons(data = nuts2_shapes(), weight = 2, fill = "transparent",
-                         color = "black") %>%
+  l <- leaflet::leaflet()
+
+  if (overlay_nuts2)
+    l <- l %>% leaflet::addPolygons(data = nuts2_shapes(), weight = 2, fill = "transparent",
+                                color = "black")
+  l %>%
     leaflet::addProviderTiles(leaflet::providers$CartoDB.Positron) %>%
     leaflet::addPolygons(
       data = merged,

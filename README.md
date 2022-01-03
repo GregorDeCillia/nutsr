@@ -104,6 +104,15 @@ nuts_map(y)
 
 ![](man/figures/nuts3_plot-1.png)<!-- -->
 
+``` r
+library(dplyr)
+iso5_pop() %>% 
+  filter(substr(iso, 1, 1) == 9) %>% 
+  nuts_map(overlay_nuts2 = FALSE)
+```
+
+![](man/figures/nuts3_plot-2.png)<!-- -->
+
 ## Similar projects
 
 The [`{eurostat}`](https://ropengov.github.io/eurostat/) package

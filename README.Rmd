@@ -90,6 +90,7 @@ This will create a [`{leaflet}`] map for the regions.
 
 ```{r, include = FALSE}
 library(sf)
+library(dplyr)
 ```
 
 
@@ -97,6 +98,10 @@ library(sf)
 library(sf)
 y <- iso3_pop()
 nuts_map(y)
+library(dplyr)
+iso5_pop() %>% 
+  filter(substr(iso, 1, 1) == 9) %>% 
+  nuts_map(overlay_nuts2 = FALSE)
 ```
 
 ## Similar projects
