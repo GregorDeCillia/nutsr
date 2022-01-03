@@ -113,6 +113,17 @@ iso5_pop() %>%
 
 ![](man/figures/nuts3_plot-2.png)<!-- -->
 
+In the future, it should also be possible to create sunburst graphs via
+[`{highcharter}`](https://jkunst.com/highcharter/). See
+<https://www.highcharts.com/demo/sunburst> for an example.
+
+``` r
+# visualize iso3 population with a sunburst diagram
+source('dev/sunburst.R')$value
+```
+
+<img src="man/figures/sunburst.png" width="616" style="display: block; margin: auto;" />
+
 ## Similar projects
 
 The [`{eurostat}`](https://ropengov.github.io/eurostat/) package
