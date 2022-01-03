@@ -112,9 +112,9 @@ See https://www.highcharts.com/demo/sunburst for an example.
 source('dev/sunburst.R')$value
 ```
 
-```{r, fig.align='center', echo=FALSE}
-knitr::include_graphics('man/figures/sunburst.png', dpi = 150)
-```
+<p align="center">
+  <img src="man/figures/sunburst.png" width="616px" />
+</p>
 
 ## Similar projects
 

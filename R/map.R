@@ -6,6 +6,7 @@
 #' @param join_by a column name. This column should contain region codes
 #' @param color a column name which contains numeric values for coloring
 #' @param cutoff percentile to cutoff the color scale. Defaults to 90%
+#' @param overlay_nuts2 show nuts2 boundaries in the map?
 #' @examples
 #' library(sf)
 #'

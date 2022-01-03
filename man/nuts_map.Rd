@@ -4,7 +4,7 @@
 \alias{nuts_map}
 \title{Create a leaflet map}
 \usage{
-nuts_map(x, join_by = NULL, color = NULL, cutoff = 0.9)
+nuts_map(x, join_by = NULL, color = NULL, cutoff = 0.9, overlay_nuts2 = TRUE)
 }
 \arguments{
 \item{x}{a data frame}
@@ -14,6 +14,8 @@ nuts_map(x, join_by = NULL, color = NULL, cutoff = 0.9)
 \item{color}{a column name which contains numeric values for coloring}
 
 \item{cutoff}{percentile to cutoff the color scale. Defaults to 90\%}
+
+\item{overlay_nuts2}{show nuts2 boundaries in the map?}
 }
 \description{
 Creates a leaflet map from a data frame which contains spatial codes.

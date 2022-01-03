@@ -122,7 +122,9 @@ In the future, it should also be possible to create sunburst graphs via
 source('dev/sunburst.R')$value
 ```
 
-<img src="man/figures/sunburst.png" width="616" style="display: block; margin: auto;" />
+<p align="center">
+<img src="man/figures/sunburst.png" width="616px" />
+</p>
 
 ## Similar projects
 
