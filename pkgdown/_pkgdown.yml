@@ -1,0 +1,31 @@
+template:
+  bootstrap: 5
+
+url: https://gregordecillia.github.io/nutsr
+
+authors:
+  sidebar:
+    roles: [aut, ctb]
+  Gregor de Cillia:
+    href: https://github.com/GregorDeCillia
+
+reference:
+- title: 'Datasets'
+  contents:
+  - 'iso3'
+  - 'iso3_pop'
+- title: 'Data Analysis'
+  contents:
+  - 'region_labels'
+  - 'region_levels'
+  - 'region_codes'
+  - 'region_parents'
+- title: 'Data Visualization'
+  contents:
+  - 'nutsr_shapes'
+  - 'nuts_map'
+  - 'nuts_drilldown'
+- title: 'Other'
+  contents:
+  - 'nutsr_cache_dir'
+  - 'sc_roxygen'
