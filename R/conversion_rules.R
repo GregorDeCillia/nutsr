@@ -109,11 +109,11 @@ chache_iso3_iso5 <- function() {
   iso3_codes <- substr(iso3_meta$code, 10, 13)
   ind <- which(nchar(iso3_codes) == 3 & iso3_codes != "900")
   iso3_meta <- iso3_meta[ind, ]
-  vienna <- iso5[substr(iso5$id,1 , 1) == 9, ]
-  vienna$id <- substr(vienna$id, 1, 3)
+  vienna <- iso5[substr(iso5$code,1 , 1) == 9, ]
+  vienna$code <- substr(vienna$code, 1, 3)
 
   iso3 <- new_conversionrule(
-    code = c(substr(iso3_meta$code, 10, 13), vienna$id),
+    code = c(substr(iso3_meta$code, 10, 13), vienna$code),
     parent = c(substr(iso3_meta$code, 10, 10), substr(vienna$parent, 1, 1)),
     name = c(
       substr(iso3_meta$label_de, 1, nchar(iso3_meta$label_de) - 6),
