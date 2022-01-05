@@ -20,6 +20,12 @@ Suggests:
     sf,
     leaflet,
     roxygen2,
-    htmltools
-Remotes:  
+    htmltools,
+    knitr,
+    rmarkdown,
+    highcharter
+Remotes: 
     statistikat/STATcubeR
+URL: https://gregordecillia.github.io/nutsr,
+  https://github.com/gregordecillia/nutsr
+VignetteBuilder: knitr
