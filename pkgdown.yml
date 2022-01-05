@@ -4,7 +4,8 @@ pkgdown_sha: ~
 articles:
   conversion_rules: conversion_rules.html
   dataviz: dataviz.html
-last_built: 2022-01-03T23:58Z
+  more_charts: more_charts.html
+last_built: 2022-01-05T06:57Z
 urls:
   reference: https://gregordecillia.github.io/nutsr/reference
   article: https://gregordecillia.github.io/nutsr/articles
