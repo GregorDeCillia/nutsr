@@ -1,0 +1,77 @@
+---
+title: "Data visualization with nutsr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Data visualization with nutsr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+`{nutsr}` provides functions to visualize spatial data.
+This article showcases currently implemented methods as well as some prototypes for future visualization.
+
+## Maps
+
+`nuts_map()` creates maps of regions using the `{leaflet}` package.
+The input dataset should contain region codes that are compatible with `{nutsr}`.
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  comment = "#>", 
+  out.width = "100%",
+  fig.align = 'center'
+)
+library(nutsr)
+library(sf)
+library(dplyr)
+library(highcharter)
+```
+
+```{r, eval = TRUE}
+library(nutsr)
+library(sf)
+library(dplyr)
+
+y <- iso3_pop()
+nuts_map(y)
+
+iso5_pop() %>% 
+  filter(substr(iso, 1, 1) == 9) %>% 
+  nuts_map(overlay_nuts2 = FALSE)
+```
+
+## Drilldown
+
+`nuts_drilldown()` allows you to create graphs similar to https://www.highcharts.com/demo/column-drilldown
+based on iso5 data. Regions can be expanded by clicking on the bars.
+It is planned to also add support for iso3 data in the future.
+
+```{r, out.height='500px'}
+nuts_drilldown(iso5_pop(), title = "Population of ${name}", 
+               value_label = "population")
+```
+
+To use this function with `{STATcubeR}` datasets, it is easiest to
+use the `raw` parameter of the `$tabulate()` method.
+
+```{r, eval = TRUE}
+x <- STATcubeR::od_table('OGD_gem_basis_quer1_GemHH_BQ_1')
+y <- x$tabulate("Commune", "Ordinary expenditures", raw = TRUE)
+y <- y[y[[1]] %in% iso5()$code, ]
+nuts_drilldown(y, title = "ordinary expenditures in ${name}",
+               value_label = "expenditures")
+```
+
+## Scatter
+
+```{r, out.height='300px'}
+readRDS('graphs/by_age.rds')
+```
+
+## Timeseries
+
+```{r, out.height='300px'}
+readRDS('graphs/ts_to_bar.rds')
+```
+
+[sunburst diagram]: https://www.highcharts.com/demo/sunburst

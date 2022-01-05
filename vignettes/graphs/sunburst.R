@@ -1,8 +1,5 @@
 pop <- iso3_pop()
-x <- STATcubeR::od_table('OGD_f0743_VZ_HIS_GEM_4')
-field_info <- x$field("Commune")
-pop$name <- field_info$label[1:nrow(pop)]
-pop$name <- substr(pop$name, 1, nchar(pop$name) - 5)
+pop$name <- region_labels(ifelse(pop$iso == 900, "AT13", pop$iso))
 names(pop) <- c("id", "value", "name")
 pop$parent <- substr(pop$id, 1, 1)
 pop$parent[pop$id == 900] <- "AT1"
@@ -18,7 +15,7 @@ pop2 <- rbind(
   data.frame(
     id = c("AT1", "AT2", "AT3"),
     value = NA,
-    name = c("Ost", "Süd", "Westösterreich"),
+    name = c("Ost", "Süd", "West"),
     parent = "AT"
   ),
   data.frame(id = 'AT', value = NA, name = "Österreich", parent = "")
@@ -95,4 +92,5 @@ hc <- highchart() %>%
 
 hc$height <- "800px"
 hc$width <- "800px"
+saveRDS(hc, 'vignettes/graphs/sunburst.rds')
 hc

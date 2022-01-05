@@ -1,0 +1,20 @@
+---
+title: "More Graphs"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{More Graphs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+library(highcharter)
+```
+
+## Sunburst
+
+Prototype for a [sunburst diagram] created with the `{highcharter}` package.
+
+```{r, eval = TRUE}
+readRDS('graphs/sunburst.rds')
+```

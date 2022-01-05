@@ -1,0 +1,57 @@
+---
+title: "Conversion Rules"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Conversion Rules}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(nutsr)
+render_conversion_table <- function(x) {
+  reactable::reactable(x, defaultPageSize = 10, minRows = 10, searchable = TRUE, columns = list(
+    code = reactable::colDef(width = 80),
+    parent = reactable::colDef(width = 80)
+  ))
+}
+```
+
+## {.tabset .tabset-pills .tabset-fade}
+
+### Nuts 1
+
+```{r}
+render_conversion_table(nuts1())
+```
+
+### Nuts 2
+
+```{r}
+render_conversion_table(nuts2())
+```
+
+### Nuts 3
+
+```{r}
+render_conversion_table(nuts3())
+```
+
+### Iso 1
+
+```{r}
+render_conversion_table(iso1())
+```
+
+### Iso 3
+
+```{r}
+render_conversion_table(iso3())
+```
+
+### Iso 5
+
+```{r}
+render_conversion_table(iso5())
+```
