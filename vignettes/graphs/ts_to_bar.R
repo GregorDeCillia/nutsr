@@ -1,9 +1,12 @@
 x <- STATcubeR::od_table('OGD_f0743_VZ_HIS_GEM_3')
 y <- x$tabulate(raw = TRUE)
 
+years <- substr(x$field('C-H88-0')$label, 1, 4)
+
 names(y) <- c("iso", "year", "pop")
+levels(y$year) <- years
 y <- y %>%
-  mutate(year = 1968 + as.numeric(substr(year, 5, 100))) %>%
+  mutate(year = as.numeric(as.character(year))) %>%
   mutate(iso = substr(iso, 10, 99))
 
 plot_data <- y %>%
@@ -33,8 +36,13 @@ drilldown_data <- y %>% split(y$year) %>% lapply(function(x) {
 callback_drill <- highcharter::JS(paste0("e => {
     let name = e.seriesOptions.name;
     title = 'Bevölkerung von Österreich'
-    if (name != 'Zeitreihe')
+    if (name != 'Zeitreihe') {
       title = title + ', ' + name
+      e.target.update({xAxis: {tickPositions: null}})
+    } else {
+      e.target.update({xAxis: {tickPositions: ",
+      jsonlite::toJSON(as.numeric(years)) , "}})
+    }
     e.target.setTitle({text: title})
   }"))
 
@@ -62,6 +70,7 @@ hc <- highchart() %>%
   highcharter::hc_chart(
     events = list(drilldown = callback_drill, drillup = callback_drill)
   ) %>%
-  hc_colors(c("#3B528B", "#2C728E"))
+  hc_colors(c("#3B528B", "#2C728E")) %>%
+  hc_xAxis(tickPositions = as.numeric(years))
 
 saveRDS(hc, "vignettes/graphs/ts_to_bar.rds")

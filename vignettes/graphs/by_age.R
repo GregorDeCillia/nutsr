@@ -70,13 +70,12 @@ for (i in unique(plot_data$agegroup)) {
 }
 
 tooltip_formatter <- JS("function(e) {
-      console.log({e:e, th: this})
       let verb = this.point.x > 0 ? 'gestiegen' : 'gesunken'
       return 'Zwischen <b>2011</b> und <b>2021</b> ist die Anzahl<br/> der ' +
         '<b><span style=\"color: ' + this.color + '\">' + this.point.from + ' bis ' + this.point.to + ' jährigen' +
         '</span></b> in <b>' + this.point.iso1 + '</b><br/> um <b>' + Math.round(Math.abs(this.point.x)*1000)/10 +
         '%</b> ' + verb + '</br><br/>' +
-        '2016: <b>' + Highcharts.numberFormat(this.point.pop16, 0) +
+        '2011: <b>' + Highcharts.numberFormat(this.point.pop16, 0) +
         '</b>, 2021: <b>' + Highcharts.numberFormat(this.point.pop, 0) + '</b>'
     }")
 
@@ -101,6 +100,7 @@ hc2 <- hc %>%
       source2 = list(text = "Daten 2021", onclick = JS("e => window.open('https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_bevstandjbab2002_BevStand_2021', '_blank')"))
     )
   ) %>%
-  hc_colors(RColorBrewer::brewer.pal(9, "Set1"))
+  hc_colors(c("#326996", "#bebebe", "#B0063D", "#e6a06e", "#87786e", "#7daf91",
+              "#a0bedc", "#646464", "#D77D82"))
 
-saveRDS(hc2, "vignettes/by_age.rds")
+saveRDS(hc2, "vignettes/graphs/by_age.rds")
