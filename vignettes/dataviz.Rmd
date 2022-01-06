@@ -74,4 +74,55 @@ readRDS('graphs/by_age.rds')
 readRDS('graphs/ts_to_bar.rds')
 ```
 
+## Packed Bubble
+
+```{r, out.height='500px'}
+readRDS('graphs/packedbubble.rds')
+```
+
+## Dependency Wheel
+
+Migration data from [Statistics Austria](http://www.statistik.at/web_de/statistiken/menschen_und_gesellschaft/bevoelkerung/wanderungen/wanderungen_innerhalb_oesterreichs_binnenwanderungen/index.html).
+
+```{r, out.height='800px'}
+readRDS('graphs/dependencywheel.rds')
+```
+
+## Bubble chart
+
+```{r, out.height='500px'}
+readRDS('graphs/bubble.rds')
+```
+
+## Voilin
+
+```{r, out.height='500px'}
+readRDS('graphs/violin.rds')
+```
+
+## Age Distribution
+
+```{r, out.height='500px'}
+readRDS('graphs/dist_nuts2.rds')
+```
+
+## Variwide
+
+```{r, out.height='500px'}
+# highchartszero() doesn't work with rmarkdown?
+# readRDS('graphs/variwide.rds')
+```
+
+## Treemap
+
+```{r, out.height='500px'}
+readRDS('graphs/treemap.rds')
+```
+
+## Dumbbell
+
+```{r, out.height='500px'}
+readRDS('graphs/dumbbell.rds')
+```
+
 [sunburst diagram]: https://www.highcharts.com/demo/sunburst
