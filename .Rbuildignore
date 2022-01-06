@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^inst$
+^dev$
+^README\.Rmd$
+^LICENSE\.md$
+^vignettes$
+^docs$
+^pkgdown$
